@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mag-ir-YL0">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Profile View Controller-->
+        <scene sceneID="HbT-oQ-6Aq">
+            <objects>
+                <collectionViewController storyboardIdentifier="ProfileViewController" id="Mag-ir-YL0" customClass="ProfileViewController" customModule="TikTokParrot" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="EkY-sm-ecM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="co8-RQ-nqZ">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="userInfoCell" id="XqH-Tj-C4G" customClass="UserInfoCollectionViewCell" customModule="TikTokParrot" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="375" height="446"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="446"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="ts5-A7-4xB">
+                                            <rect key="frame" x="123.5" y="44" width="128" height="128"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="ts5-A7-4xB" secondAttribute="height" id="Oaf-Kd-Qep"/>
+                                                <constraint firstAttribute="height" constant="128" id="hSc-w9-k3T"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INSERT USER INFO HERE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlW-gO-0lc">
+                                            <rect key="frame" x="90" y="265" width="195" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="qlW-gO-0lc" firstAttribute="centerX" secondItem="ts5-A7-4xB" secondAttribute="centerX" id="1FB-uS-rRj"/>
+                                    <constraint firstItem="ts5-A7-4xB" firstAttribute="centerX" secondItem="XqH-Tj-C4G" secondAttribute="centerX" id="E0k-O4-G0T"/>
+                                    <constraint firstItem="qlW-gO-0lc" firstAttribute="top" secondItem="ts5-A7-4xB" secondAttribute="bottom" constant="93" id="OPo-wz-CXo"/>
+                                    <constraint firstItem="ts5-A7-4xB" firstAttribute="top" secondItem="XqH-Tj-C4G" secondAttribute="topMargin" constant="16" id="nt5-CU-2ZZ"/>
+                                </constraints>
+                                <size key="customSize" width="375" height="446"/>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="videoCell" id="wUi-hb-IAM" customClass="UserVideoCollectionViewCell" customModule="TikTokParrot" customModuleProvider="target">
+                                <rect key="frame" x="128" y="506" width="119" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="119" height="119"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PFt-ub-hN8">
+                                            <rect key="frame" x="0.0" y="0.0" width="119" height="119"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="PFt-ub-hN8" secondAttribute="trailing" id="9wY-4H-dqW"/>
+                                    <constraint firstItem="PFt-ub-hN8" firstAttribute="top" secondItem="wUi-hb-IAM" secondAttribute="top" id="dBb-Wz-EyJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="PFt-ub-hN8" secondAttribute="bottom" id="gRC-pd-mcs"/>
+                                    <constraint firstItem="PFt-ub-hN8" firstAttribute="leading" secondItem="wUi-hb-IAM" secondAttribute="leading" id="jMb-ef-oEC"/>
+                                </constraints>
+                                <size key="customSize" width="119" height="119"/>
+                                <connections>
+                                    <outlet property="imageView" destination="PFt-ub-hN8" id="mjr-Ci-gPT"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="yaV-1j-XFD" customClass="ProfileCollectionReusableView" customModule="TikTokParrot" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="43c-hn-yua">
+                                    <rect key="frame" x="8" y="8" width="359" height="35"/>
+                                    <segments>
+                                        <segment title="" image="collection"/>
+                                        <segment title="" image="heart"/>
+                                    </segments>
+                                </segmentedControl>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailingMargin" secondItem="43c-hn-yua" secondAttribute="trailing" id="66T-KL-Qne"/>
+                                <constraint firstItem="43c-hn-yua" firstAttribute="top" secondItem="yaV-1j-XFD" secondAttribute="topMargin" id="IBP-Dm-fSM"/>
+                                <constraint firstAttribute="bottomMargin" secondItem="43c-hn-yua" secondAttribute="bottom" id="ewv-5X-Voe"/>
+                                <constraint firstItem="43c-hn-yua" firstAttribute="leading" secondItem="yaV-1j-XFD" secondAttribute="leadingMargin" id="nkG-Dg-ThH"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="segmentedControl" destination="43c-hn-yua" id="5SQ-FM-fYH"/>
+                            </connections>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="Mag-ir-YL0" id="BGZ-aI-JgB"/>
+                            <outlet property="delegate" destination="Mag-ir-YL0" id="CMo-KV-4d4"/>
+                        </connections>
+                    </collectionView>
+                    <connections>
+                        <segue destination="3Ka-a7-bx6" kind="presentation" identifier="HomeFeed" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="YC8-QN-BH8"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s8K-W7-rhC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1464.8" y="-79.610194902548727"/>
+        </scene>
+        <!--HomeFeed-->
+        <scene sceneID="rnI-sI-5t0">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HomeFeed" id="3Ka-a7-bx6" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="voY-h4-FoS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2169" y="-302"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="collection" width="32" height="32"/>
+        <image name="heart" width="32" height="32"/>
+        <image name="user" width="32" height="32"/>
+    </resources>
+</document>
