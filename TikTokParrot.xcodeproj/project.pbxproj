@@ -182,8 +182,7 @@
 				0D6B81EC226BDA5900099446 /* AppDelegate.swift */,
 				0DB2DC462270F65500C2E4C3 /* Workers */,
 				0DB2DC3E2270E85E00C2E4C3 /* VideoPlayerView.swift */,
-				0DB2DC472270F66F00C2E4C3 /* Scenes */,
-				0DB2DC3B2270E75100C2E4C3 /* Record */,
+				0DB2DC49227151FC00C2E4C3 /* Scenes */,
 				0DB2DC3C2270E7D400C2E4C3 /* Extensions */,
 				0D6B81F5226BDA5D00099446 /* Assets.xcassets */,
 				0D6B81F7226BDA5D00099446 /* LaunchScreen.storyboard */,
@@ -295,14 +294,31 @@
 			path = Workers;
 			sourceTree = "<group>";
 		};
-		0DB2DC472270F66F00C2E4C3 /* Scenes */ = {
+		0DB2DC472270F66F00C2E4C3 /* Consumption */ = {
 			isa = PBXGroup;
 			children = (
-				0DBB68DC2270E51700470D34 /* Base */,
 				0D6B821E226BDDBA00099446 /* HomeFeed */,
 				0D6B8237226BDED300099446 /* Search */,
 				0D6B8246226BDF3000099446 /* Notifications */,
 				0D6B8257226BE04800099446 /* Profile */,
+			);
+			path = Consumption;
+			sourceTree = "<group>";
+		};
+		0DB2DC48227151F300C2E4C3 /* Creation */ = {
+			isa = PBXGroup;
+			children = (
+				0DB2DC3B2270E75100C2E4C3 /* Record */,
+			);
+			path = Creation;
+			sourceTree = "<group>";
+		};
+		0DB2DC49227151FC00C2E4C3 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				0DBB68DC2270E51700470D34 /* Base */,
+				0DB2DC472270F66F00C2E4C3 /* Consumption */,
+				0DB2DC48227151F300C2E4C3 /* Creation */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
