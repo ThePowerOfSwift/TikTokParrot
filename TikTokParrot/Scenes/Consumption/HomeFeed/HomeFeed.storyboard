@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIE-JW-kPr">
+                            <tableView clipsSubviews="YES" contentMode="scaleAspectFit" directionalLockEnabled="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIE-JW-kPr">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -30,7 +30,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="C3b-9h-DHU">
-                                                    <rect key="frame" x="-1" y="3" width="377" height="561"/>
+                                                    <rect key="frame" x="-1" y="0.0" width="377" height="566.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="cGV-lK-XnP">
@@ -96,14 +96,14 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="C3b-9h-DHU" firstAttribute="centerY" secondItem="kog-oB-AKo" secondAttribute="centerY" id="6Eq-g8-Op7"/>
                                                 <constraint firstAttribute="trailing" secondItem="cGV-lK-XnP" secondAttribute="trailing" constant="16" id="6bU-r5-JrG"/>
                                                 <constraint firstItem="C3b-9h-DHU" firstAttribute="trailingMargin" secondItem="kog-oB-AKo" secondAttribute="trailingMargin" constant="8" id="7rM-BK-WRx"/>
-                                                <constraint firstItem="C3b-9h-DHU" firstAttribute="topMargin" secondItem="kog-oB-AKo" secondAttribute="topMargin" id="D4U-1V-cM1"/>
                                                 <constraint firstItem="NCb-jw-egd" firstAttribute="centerY" secondItem="kog-oB-AKo" secondAttribute="centerY" id="G4L-g4-rLP"/>
+                                                <constraint firstItem="C3b-9h-DHU" firstAttribute="height" secondItem="kog-oB-AKo" secondAttribute="height" id="K9N-jy-mzF"/>
                                                 <constraint firstItem="C3b-9h-DHU" firstAttribute="leadingMargin" secondItem="kog-oB-AKo" secondAttribute="leadingMargin" constant="-8" id="alX-fS-CzW"/>
                                                 <constraint firstItem="cGV-lK-XnP" firstAttribute="centerY" secondItem="kog-oB-AKo" secondAttribute="centerY" id="kDv-AD-AeK"/>
                                                 <constraint firstItem="NCb-jw-egd" firstAttribute="centerX" secondItem="kog-oB-AKo" secondAttribute="centerX" id="ldM-kV-Gz1"/>
-                                                <constraint firstItem="C3b-9h-DHU" firstAttribute="bottomMargin" secondItem="kog-oB-AKo" secondAttribute="bottomMargin" id="uWa-3A-v99"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

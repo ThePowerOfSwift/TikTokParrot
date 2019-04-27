@@ -39,6 +39,7 @@
 		0D6B8262226BE05600099446 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6B825C226BE05600099446 /* ProfileViewController.swift */; };
 		0D6B8263226BE05600099446 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6B825D226BE05600099446 /* ProfileInteractor.swift */; };
 		0D6B826B226C053A00099446 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6B826A226C053A00099446 /* BaseViewController.swift */; };
+		0D8501062274318500237C99 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8501052274318500237C99 /* BaseNavigationController.swift */; };
 		0DB2DC3A2270E6F700C2E4C3 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB2DC392270E6F700C2E4C3 /* RecordViewController.swift */; };
 		0DB2DC3F2270E85F00C2E4C3 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB2DC3E2270E85E00C2E4C3 /* VideoPlayerView.swift */; };
 		0DB2DC412270F4E100C2E4C3 /* HomeFeedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB2DC402270F4E100C2E4C3 /* HomeFeedRouter.swift */; };
@@ -113,6 +114,7 @@
 		0D6B825C226BE05600099446 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0D6B825D226BE05600099446 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
 		0D6B826A226C053A00099446 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		0D8501052274318500237C99 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		0DB2DC392270E6F700C2E4C3 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		0DB2DC3E2270E85E00C2E4C3 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
 		0DB2DC402270F4E100C2E4C3 /* HomeFeedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedRouter.swift; sourceTree = "<group>"; };
@@ -226,12 +228,12 @@
 			isa = PBXGroup;
 			children = (
 				0D6B8238226BDEE400099446 /* Search.storyboard */,
+				0D6B823E226BDEF300099446 /* SearchViewController.swift */,
+				0D6B823F226BDEF300099446 /* SearchInteractor.swift */,
 				0D6B823A226BDEF300099446 /* SearchPresenter.swift */,
 				0D6B823B226BDEF300099446 /* SearchWorker.swift */,
 				0D6B823C226BDEF300099446 /* SearchRouter.swift */,
 				0D6B823D226BDEF300099446 /* SearchModels.swift */,
-				0D6B823E226BDEF300099446 /* SearchViewController.swift */,
-				0D6B823F226BDEF300099446 /* SearchInteractor.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -328,6 +330,7 @@
 			children = (
 				0D6B81F2226BDA5900099446 /* Base.storyboard */,
 				0D6B826A226C053A00099446 /* BaseViewController.swift */,
+				0D8501052274318500237C99 /* BaseNavigationController.swift */,
 				0DB2DC442270F55A00C2E4C3 /* MenuCell.swift */,
 				0DBB68D0226FC11000470D34 /* BasePresenter.swift */,
 				0DB2DC422270F4FF00C2E4C3 /* BaseRouter.swift */,
@@ -498,6 +501,7 @@
 				0DBB68CD226D6D2900470D34 /* ProfileCollectionReusableView.swift in Sources */,
 				0DBB68CB226D694100470D34 /* UserInfoCollectionViewCell.swift in Sources */,
 				0D6B8245226BDEF300099446 /* SearchInteractor.swift in Sources */,
+				0D8501062274318500237C99 /* BaseNavigationController.swift in Sources */,
 				0DBB68C3226D51BD00470D34 /* ColorExtension.swift in Sources */,
 				0DBB68C9226D58AD00470D34 /* UserVideoCollectionViewCell.swift in Sources */,
 				0D6B8236226BDE8100099446 /* HomeFeedInteractor.swift in Sources */,

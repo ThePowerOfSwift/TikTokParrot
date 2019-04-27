@@ -93,9 +93,8 @@ class HomeFeedViewController: UIViewController, HomeFeedDisplayLogic
         
         tableView.delegate = self
         tableView.dataSource = self
-        
         backButton.isHidden = (interactor?.hideBackButton)!
-        
+
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(videoPressed(sender:)))
         view.addGestureRecognizer(tapGestureRecognizer)
     }
@@ -117,13 +116,30 @@ class HomeFeedViewController: UIViewController, HomeFeedDisplayLogic
         }
     }
     
+    override func viewDidLayoutSubviews()
+    {
+        super.viewDidLayoutSubviews()
+        if isFirstLoad
+        {
+//            isFirstLoad = false
+            let indexPath = IndexPath(row: (interactor?.videoIndex) ?? 0, section: 0)
+            tableView.scrollToRow(at: indexPath, at: .none , animated: false)
+//            guard let thisCell = tableView.cellForRow(at: indexPath) as? VideoTableViewCell else {return}
+//            currentCell = thisCell
+//            thisCell.player?.play()
+//            NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: thisCell.player?.currentItem, queue: .main) { _ in
+//                thisCell.player?.seek(to: CMTime.zero)
+//                thisCell.player?.play()
+//            }
+        }
+    }
     override func viewDidAppear(_ animated: Bool)
     {
         if isFirstLoad
         {
             isFirstLoad = false
             let indexPath = IndexPath(row: (interactor?.videoIndex) ?? 0, section: 0)
-            tableView.scrollToRow(at: indexPath, at: .top , animated: false)
+//            tableView.scrollToRow(at: indexPath, at: .middle , animated: false)
             guard let thisCell = tableView.cellForRow(at: indexPath) as? VideoTableViewCell else {return}
             currentCell = thisCell
             thisCell.player?.play()
@@ -181,7 +197,7 @@ extension HomeFeedViewController: UITableViewDataSource, UITableViewDelegate, UI
             cell.videoContainerView.layer.sublayers?.removeAll()
             cell.player = playerView.player
             cell.videoContainerView.layer.addSublayer(playerView.playerLayer)
-            playerView.playerLayer.frame = cell.videoContainerView.frame
+            playerView.playerLayer.frame = cell.bounds
         }
         return cell
     }
