@@ -110,6 +110,8 @@ class HomeFeedViewController: UIViewController, HomeFeedDisplayLogic
     
     override func viewWillAppear(_ animated: Bool)
     {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
         if currentCell != nil
         {
             currentCell!.player?.play()
@@ -121,18 +123,11 @@ class HomeFeedViewController: UIViewController, HomeFeedDisplayLogic
         super.viewDidLayoutSubviews()
         if isFirstLoad
         {
-//            isFirstLoad = false
             let indexPath = IndexPath(row: (interactor?.videoIndex) ?? 0, section: 0)
-            tableView.scrollToRow(at: indexPath, at: .none , animated: false)
-//            guard let thisCell = tableView.cellForRow(at: indexPath) as? VideoTableViewCell else {return}
-//            currentCell = thisCell
-//            thisCell.player?.play()
-//            NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: thisCell.player?.currentItem, queue: .main) { _ in
-//                thisCell.player?.seek(to: CMTime.zero)
-//                thisCell.player?.play()
-//            }
+            tableView.scrollToRow(at: indexPath, at: .bottom , animated: false)
         }
     }
+
     override func viewDidAppear(_ animated: Bool)
     {
         if isFirstLoad
@@ -140,6 +135,7 @@ class HomeFeedViewController: UIViewController, HomeFeedDisplayLogic
             isFirstLoad = false
             let indexPath = IndexPath(row: (interactor?.videoIndex) ?? 0, section: 0)
 //            tableView.scrollToRow(at: indexPath, at: .middle , animated: false)
+//            tableView.scrollToNearestSelectedRow(at: .middle, animated: false)
             guard let thisCell = tableView.cellForRow(at: indexPath) as? VideoTableViewCell else {return}
             currentCell = thisCell
             thisCell.player?.play()
@@ -216,6 +212,7 @@ extension HomeFeedViewController: UITableViewDataSource, UITableViewDelegate, UI
         print("HEY")
         print(tableView.visibleCells)
         guard let cell = tableView.visibleCells.first as? VideoTableViewCell else {return}
+//        currentCell = cell
         if currentCell != nil
         {
             if currentCell != cell
@@ -231,9 +228,10 @@ extension HomeFeedViewController: UITableViewDataSource, UITableViewDelegate, UI
                     cell.player?.play()
                 }
             }
-            if let indexPath = self.tableView.indexPath(for: currentCell!)
+            if let indexPath = self.tableView.indexPath(for: cell)
             {
                 interactor?.videoIndex = indexPath.row
+                homeFeedToBaseDelegate?.saveVideoPosition(row: indexPath.row)
             }
         }
     }
@@ -254,10 +252,11 @@ extension HomeFeedViewController: BaseToHomeFeedDelegate
 {
     func loadVideoStreamsIntoFeed(playerViewArr: [VideoPlayerView], row: Int)
     {
+        interactor?.videoIndex = row
         interactor?.playerViewArr = playerViewArr
         tableView.reloadData()
         // TODO: The tableView won't scroll to the saved position
-        let ip = IndexPath(row: row, section: 0)
-        tableView.scrollToRow(at: ip, at: .top, animated: false)
+//        let ip = IndexPath(row: row, section: 0)
+//        tableView.scrollToRow(at: ip, at: .top, animated: false)
     }
 }

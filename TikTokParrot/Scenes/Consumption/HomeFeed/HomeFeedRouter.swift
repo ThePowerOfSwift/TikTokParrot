@@ -11,7 +11,6 @@ import UIKit
 
 @objc protocol HomeFeedRoutingLogic
 {
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
 }
 
 protocol HomeFeedDataPassing

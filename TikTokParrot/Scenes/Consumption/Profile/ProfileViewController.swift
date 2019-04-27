@@ -184,7 +184,10 @@ extension ProfileViewController: UICollectionViewDelegateFlowLayout
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
-        interactor?.videoIndex = indexPath.row
-        performSegue(withIdentifier: homeFeedSegueId, sender: self)
+        if indexPath.section == 1
+        {
+            interactor?.videoIndex = indexPath.row
+            performSegue(withIdentifier: homeFeedSegueId, sender: self)
+        }
     }
 }

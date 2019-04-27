@@ -89,7 +89,7 @@ class BaseViewController: UIViewController, BaseDisplayLogic
     
     override func viewWillAppear(_ animated: Bool)
     {
-        navigationController?.navigationBar.isHidden = true
+//        navigationController?.navigationBar.isHidden = true
     }
     
     // MARK: Get / Display Video Streams
