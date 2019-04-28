@@ -123,8 +123,9 @@ class HomeFeedViewController: UIViewController, HomeFeedDisplayLogic
         super.viewDidLayoutSubviews()
         if isFirstLoad
         {
-            let indexPath = IndexPath(row: (interactor?.videoIndex) ?? 0, section: 0)
-            tableView.scrollToRow(at: indexPath, at: .bottom , animated: false)
+            let indexPath = IndexPath(row: (self.interactor?.videoIndex) ?? 0, section: 0)
+            self.tableView.layoutIfNeeded()
+            self.tableView.scrollToRow(at: indexPath, at: .middle , animated: false)
         }
     }
 
@@ -134,8 +135,6 @@ class HomeFeedViewController: UIViewController, HomeFeedDisplayLogic
         {
             isFirstLoad = false
             let indexPath = IndexPath(row: (interactor?.videoIndex) ?? 0, section: 0)
-//            tableView.scrollToRow(at: indexPath, at: .middle , animated: false)
-//            tableView.scrollToNearestSelectedRow(at: .middle, animated: false)
             guard let thisCell = tableView.cellForRow(at: indexPath) as? VideoTableViewCell else {return}
             currentCell = thisCell
             thisCell.player?.play()
