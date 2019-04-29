@@ -83,11 +83,13 @@ class BaseViewController: UIViewController, BaseDisplayLogic
         menuBar.dataSource = self
         menuBar.selectItem(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: .left)
         interactor?.getVideoStreams()
+//        automaticallyAdjustsScrollViewInsets = false
+//        setNeedsStatusBarAppearanceUpdate()
     }
     
     override func viewWillAppear(_ animated: Bool)
     {
-        navigationController?.navigationBar.isHidden = true
+//        navigationController?.navigationBar.isHidden = true
     }
     
     // MARK: Get / Display Video Streams

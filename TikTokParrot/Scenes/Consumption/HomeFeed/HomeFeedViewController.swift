@@ -93,9 +93,8 @@ class HomeFeedViewController: UIViewController, HomeFeedDisplayLogic
         
         tableView.delegate = self
         tableView.dataSource = self
-        
         backButton.isHidden = (interactor?.hideBackButton)!
-        
+
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(videoPressed(sender:)))
         view.addGestureRecognizer(tapGestureRecognizer)
     }
@@ -111,19 +110,31 @@ class HomeFeedViewController: UIViewController, HomeFeedDisplayLogic
     
     override func viewWillAppear(_ animated: Bool)
     {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
         if currentCell != nil
         {
             currentCell!.player?.play()
         }
     }
     
+    override func viewDidLayoutSubviews()
+    {
+        super.viewDidLayoutSubviews()
+        if isFirstLoad
+        {
+            let indexPath = IndexPath(row: (self.interactor?.videoIndex) ?? 0, section: 0)
+            self.tableView.layoutIfNeeded()
+            self.tableView.scrollToRow(at: indexPath, at: .middle , animated: false)
+        }
+    }
+
     override func viewDidAppear(_ animated: Bool)
     {
         if isFirstLoad
         {
             isFirstLoad = false
             let indexPath = IndexPath(row: (interactor?.videoIndex) ?? 0, section: 0)
-            tableView.scrollToRow(at: indexPath, at: .top , animated: false)
             guard let thisCell = tableView.cellForRow(at: indexPath) as? VideoTableViewCell else {return}
             currentCell = thisCell
             thisCell.player?.play()
@@ -181,7 +192,7 @@ extension HomeFeedViewController: UITableViewDataSource, UITableViewDelegate, UI
             cell.videoContainerView.layer.sublayers?.removeAll()
             cell.player = playerView.player
             cell.videoContainerView.layer.addSublayer(playerView.playerLayer)
-            playerView.playerLayer.frame = cell.videoContainerView.frame
+            playerView.playerLayer.frame = cell.bounds
         }
         return cell
     }
@@ -200,6 +211,7 @@ extension HomeFeedViewController: UITableViewDataSource, UITableViewDelegate, UI
         print("HEY")
         print(tableView.visibleCells)
         guard let cell = tableView.visibleCells.first as? VideoTableViewCell else {return}
+//        currentCell = cell
         if currentCell != nil
         {
             if currentCell != cell
@@ -215,9 +227,10 @@ extension HomeFeedViewController: UITableViewDataSource, UITableViewDelegate, UI
                     cell.player?.play()
                 }
             }
-            if let indexPath = self.tableView.indexPath(for: currentCell!)
+            if let indexPath = self.tableView.indexPath(for: cell)
             {
                 interactor?.videoIndex = indexPath.row
+                homeFeedToBaseDelegate?.saveVideoPosition(row: indexPath.row)
             }
         }
     }
@@ -238,10 +251,11 @@ extension HomeFeedViewController: BaseToHomeFeedDelegate
 {
     func loadVideoStreamsIntoFeed(playerViewArr: [VideoPlayerView], row: Int)
     {
+        interactor?.videoIndex = row
         interactor?.playerViewArr = playerViewArr
         tableView.reloadData()
         // TODO: The tableView won't scroll to the saved position
-        let ip = IndexPath(row: row, section: 0)
-        tableView.scrollToRow(at: ip, at: .top, animated: false)
+//        let ip = IndexPath(row: row, section: 0)
+//        tableView.scrollToRow(at: ip, at: .top, animated: false)
     }
 }
